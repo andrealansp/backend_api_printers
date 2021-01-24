@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
+  },
+  "type": "module",
+  "name": "api-printers",
+  "version": "1.0.0",
+  "description": "API para controle de tonner de printers.",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andre Alan Alves",
+  "license": "ISC"
+}
