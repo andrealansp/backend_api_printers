@@ -13,6 +13,7 @@ tonnersRoutes.post("/addmodel",async (req,res,next)=>{
         dadostonners = {id: jsonTonners.nextId++,
             type: dadostonners.type,
             printer: dadostonners.printer,
+            cor: dadostonners.cor,
             quantidade: 0}
             // Grava os dados da API no JSON.
             jsonTonners.modelos.push(dadostonners);
