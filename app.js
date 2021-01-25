@@ -5,6 +5,7 @@ import tonnersRoutes from "./routes/tonners.js";
 const app = express();
 app.use(express.json());
 const handler = new handlerJson();
+const PORT = process.env.PORT || 3000;
 
 global.fileName = "tonners.json";
 
