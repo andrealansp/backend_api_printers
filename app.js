@@ -15,6 +15,6 @@ app.get('/', async (_, res) => {
     res.send({"Modelos Cadastrados:" : data.modelos});
   })
   
-  app.listen(() => {   
+  app.listen((PORT) => {   
     handler.inicializaJson();
   })
