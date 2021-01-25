@@ -1,4 +1,5 @@
 import {promises as fs } from 'fs';
+import json from "express";
 
 const {writeFile, readFile} = fs
 
@@ -33,8 +34,9 @@ class handlerJson{
         }    
     }
 
-    leJson(){
-        
+    async leJson(){
+        const response = JSON.parse(await readFile(global.fileName));
+        return response;
     }
 
 } 

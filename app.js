@@ -1,5 +1,6 @@
 import express from "express";
 import handlerJson from "./controllers/jsonController.js";
+import tonnersRoutes from "./routes/tonners.js";
 
 const app = express();
 app.use(express.json());
@@ -8,9 +9,11 @@ const port = 3000;
 
 global.fileName = "tonners.json";
 
+app.use("/tonners",tonnersRoutes);
 
-app.get('/', (req, res) => {
-    res.send({message: "Sistema de controle de estoque para insumos de impressoras HP."})
+app.get('/', async (_, res) => {
+    const data = await handler.leJson();
+    res.send(data);
   })
   
   app.listen(port, () => {   
