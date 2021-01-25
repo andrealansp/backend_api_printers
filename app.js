@@ -13,7 +13,7 @@ app.use("/tonners",tonnersRoutes);
 
 app.get('/', async (_, res) => {
     const data = await handler.leJson();
-    res.send(data);
+    res.send({"Modelos Cadastrados:" : data.modelos});
   })
   
   app.listen(port, () => {   
