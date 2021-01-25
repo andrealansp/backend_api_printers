@@ -26,4 +26,19 @@ tonnersRoutes.post("/addmodel",async (req,res,next)=>{
     }
 });
 
+tonnersRoutes.delete("/deletemodel/:id",async(req, res,next )=>{
+    console.log(req.params.id);
+    try{
+      const jsonTonners = JSON.parse(await readFile(global.fileName));
+      jsonTonners.modelos = jsonTonners.modelos.filter(
+        modelo => modelo.id !== parseInt(req.params.id)
+      ); 
+      console.log(jsonTonners);
+      await writeFile(global.fileName, JSON.stringify(jsonTonners,null,2));
+      res.end();
+    }catch(err){
+      next(err);
+    }
+  });
+
 export default tonnersRoutes;
